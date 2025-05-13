@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Chapter Bylaws | Pace Women in Cybersecurity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="file.png">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    /* Highlight style */
+    .highlight {
+        background-color: yellow;
+    }
+
+    .search-container {
+        margin-left: auto; /* Pushes the search bar to the right */
+    }
+
+    .search-container input {
+        padding: 10px; /* Adjust padding for a better look */
+        margin: 20px; /* Adjust margin as needed */
+        border: 1px solid #ccc; /* Light border */
+        border-radius: 20px; /* Rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        transition: border-color 0.3s; /* Smooth transition for border color */
+    }
+
+    .search-container input:focus {
+        border-color: #812990; /* Change border color on focus */
+        outline: none; /* Remove outline */
+    }
+
+    .h h1 {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        color: #003366;
+        font-weight: 600;
+</style>
+
+</head>
+<body>
+    <div class="main">
+        <header>
+            <div class="navbar-wrapper">
+                <div class="navbar">
+                    <img align="left" src="WiCyS Pace U Student Chapter Logo.png" alt="Logo" class="logo">
+                    <strong><a href="index.html">Home</a></strong>
+                    <strong><a href="events.html">Events</a></strong>
+                    <strong><a href="team.html">Leadership Team</a></strong>
+                    <strong><a href="contact.html">Contact Us</a></strong>
+                    <strong><a href="scholarships.html">Scholarships</a></strong>
+                    <strong><a href="join.html">Join Us</a></strong>
+                    <div class="dropdown">
+                        <button class="dropbtn"><strong>Our Work</strong></button>
+                        <div class="dropdown-content">
+                            <a href="mitre2024.html">The Mitre 2024 eCTF</a>
+                            <a href="WiCyS Futures High School Initiative.html">WiCyS Futures High School Initiative</a>
+                        </div>
+                    </div>
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchFunction()" onblur="clearHighlights()">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <img class="fit" src="Student-custom.png" alt="Student Chapter Image">
+        <br>
+        <div style="margin-left: 20px;">
+            <center><div class="h"><h1>WiCyS Student Chapter Bylaws</h1></div>
+                <iframe src="StudentChapterBylaws.pdf" width="800" height="600"></iframe>
+            </center>
+        </div><br>
+        <center><a href="StudentChapterBylaws.pdf" target="_blank" rel="noopener noreferrer"><button class="sexy-button">Download</button></a></center>
+        <br>
+        <br>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) { // Change 100 to the scroll amount you prefer
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+function searchFunction() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const sections = document.querySelectorAll('.content-section, h1, h2, p');
+
+            // Clear previous highlights
+            sections.forEach(section => {
+                const innerText = section.innerText.replace(/<span class="highlight">(.*?)<\/span>/g, '$1');
+                section.innerHTML = innerText;
+            });
+
+            // Highlight matching text
+            if (filter) {
+                sections.forEach(section => {
+                    const text = section.textContent.toLowerCase();
+                    if (text.includes(filter)) {
+                        const regex = new RegExp(`(${filter})`, 'gi');
+                        const innerText = section.innerText.replace(/<span class="highlight">(.*?)<\/span>/g, '$1'); // Clean existing highlights
+                        section.innerHTML = innerText.replace(regex, '<span class="highlight">$1</span>');
+                    }
+                });
+            }
+        }
+
+        function clearHighlights() {
+            const sections = document.querySelectorAll('.content-section, h1, h2, p');
+
+            // Clear highlights
+            sections.forEach(section => {
+                const innerHTML = section.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g, '$1');
+                section.innerHTML = innerHTML;
+            });
+        }
+    </script>
+
+    <footer style="padding: 20px; background-color: #812990; color: white;">
+        <div class="bottomnav-left" style="float: left; display: flex; align-items: center;">
+            <a href="https://discord.com/invite/vCSYeaBAww" style="text-decoration: none;">
+                <img src="discord-logo.png" height="35" width="35" style="vertical-align: middle;">
+            </a>
+            <a href="https://www.instagram.com/paceuwicys/" class="fa fa-instagram" style="margin-left: 10px; vertical-align: middle;"></a>
+            <a href="https://www.linkedin.com/in/pace-wicys-896a59201" class="fa fa-linkedin" style="margin-left: 10px; vertical-align: middle;"></a>
+        </div>
+
+        <div style="text-align: right;">
+            <h1 style="font-size: 20px; margin: 0;">About Us</h1><br>
+            <a href="Pace WiCyS Backgrounds and Banners.html" style="color: white; text-decoration: none; font-size: 16px;">Backgrounds & Banners</a><br>
+            <a href="Student Chapter Bylaws.html" style="color: white; text-decoration: none;">Bylaws</a><br><br><br>
+            <div style="float: right; margin-left: 20px;">
+                <img src="Untitled design.png" alt="Description of image" height="150" style="vertical-align: middle;">
+                <img src="WiCyS Pace U Student Chapter Logo.png" alt="Description of image" height="150" style="vertical-align: middle;">
+            </div>
+        </div>
+
+        <div style="margin-top: 20px; text-align: left;">
+            <h2>Visit Us</h2>
+            <div>
+                <h3>NYC Campus</h3>
+                <p><strong>Common Hour:</strong> Wed 12:10-1:10 pm<br>
+                <strong>Computer Lab:</strong> Sat 10 am-1 pm<br>
+                <strong>Building:</strong> Room #</p>
+            </div>
+            <div>
+                <h3>Pleasantville Campus</h3>
+                <p><strong>Common Hour:</strong> Wed 12:10-1:10 pm<br>
+                <strong>Computer Lab:</strong> Sat 10 am-1 pm<br>
+                <strong>Building:</strong> Room #</p>
+            </div>
+        </div>
+
+        <center>
+            <p style="margin-top: 20px;">&copy; 2024 Pace Women in Cybersecurity. All rights reserved. <a href="creators.html" style="color: lime;">SITE CREDITS</a></p>
+        </center>
+    </footer>
+</body>
+</html>
